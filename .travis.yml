@@ -1,12 +1,13 @@
 sudo: required
 services:
-   - docker;
+   - docker
 
 before install:
    - docker build -t w13/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-   - docker run w13/react-test npm run test -- --coverage
+  # - docker run w13/react-test npm run test -- --coverage
+    - docker run -e CI=true w13/react-test npm run test
 
 after_suuccess:
    - docker build -t w13/multi-client ./client
