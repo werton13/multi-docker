@@ -14,14 +14,14 @@ after_suuccess:
    - docker build -t w13/multi-server ./server
    - docker build -t w13/multi-worker ./worker
 #login to the docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 #DOCKER_ID: $DOCKER_ID
 #DOCKER_PASSWORD: $DOCKER_PASSWORD
 # take those images and push them to the DockerHub
-- docker push w13/multi-client
-- docker push w13/multi-nginx
-- docker push w13/multi-server
-- docker push w13/multi-worker
+   - docker push w13/multi-client
+   - docker push w13/multi-nginx
+   - docker push w13/multi-server
+   - docker push w13/multi-worker
 
 
 
