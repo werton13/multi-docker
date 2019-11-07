@@ -1,0 +1,32 @@
+sudo: required
+services:
+   - docker;
+
+before install:
+   - docker build -t w13/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+   - docker run -e CI=true  w13/react-test npm test
+
+after_suuccess:
+   - docker build -t w13/multi-client ./client
+   - docker build -t w13/multi-nginx ./nginx
+   - docker build -t w13/multi-server ./server
+   - docker build -t w13/multi-worker ./worker
+#login to the docker CLI
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+#DOCKER_ID: $DOCKER_ID
+#DOCKER_PASSWORD: $DOCKER_PASSWORD
+# take those images and push them to the DockerHub
+- docker push w13/multi-client
+- docker push w13/multi-nginx
+- docker push w13/multi-server
+- docker push w13/multi-worker
+
+
+
+
+
+
+
+
