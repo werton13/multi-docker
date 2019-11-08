@@ -10,19 +10,19 @@ script:
 #   - docker run -e CI=true w13/react-test npm run test
    - docker run -e CI=true w13/react-test npm run test
 after_success:
-   - docker build -t w13/multi-client ./client
-   - docker build -t w13/multi-nginx ./nginx
-   - docker build -t w13/multi-server ./server
-   - docker build -t w13/multi-worker ./worker
+   - docker build -t w13/multi-client:v1 ./client
+   - docker build -t w13/multi-nginx:v1 ./nginx
+   - docker build -t w13/multi-server:v1 ./server
+   - docker build -t w13/multi-worker:v1 ./worker
 #login to the docker CLI
-   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin docker.io
 #DOCKER_ID: $DOCKER_ID
 #DOCKER_PASSWORD: $DOCKER_PASSWORD
 # take those images and push them to the DockerHub
-   - docker push w13/multi-client
-   - docker push w13/multi-nginx
-   - docker push w13/multi-server
-   - docker push w13/multi-worker
+   - docker push w13/multi-client:v1
+   - docker push w13/multi-nginx:v1
+   - docker push w13/multi-server:v1
+   - docker push w13/multi-worker:v1
 
 
 
