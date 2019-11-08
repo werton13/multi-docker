@@ -8,7 +8,7 @@ before_install:
 
 script:
 #   - docker run -e CI=true w13/react-test npm run test
-   - docker run w13/react-test npm run test
+   - docker run -e CI=true w13/react-test npm run test
 after_suuccess:
    - docker build -t w13/multi-client ./client
    - docker build -t w13/multi-nginx ./nginx
