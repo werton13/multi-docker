@@ -17,7 +17,7 @@ after_success:
 #login to the docker CLI
    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin docker.io
 
-# take those images and push them to the DockerHub
+# take those images and push them to the DockerHub!
    - docker push werton13/multi-client:v1
    - docker push werton13/multi-nginx:v1
    - docker push werton13/multi-server:v1
