@@ -1,0 +1,46 @@
+{
+  "postgres_user" :  "postgres",
+  "postgres_password": "postgres_password",
+  "secgroupname" : "postgres_secgroup"
+}, 
+ 
+
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name"  : "client",
+            "image" : "werton13/multi-client",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name" : "server",
+            "image" :" werton13/multi-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name" : "worker",
+            "image" :" werton13/multi-worker",
+            "hostname": "worker",
+            "essential": false
+        },
+        {
+            "name" : "nginx",
+            "image" :" werton13/multi-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings" : [
+                {
+                "hostPort": 80 ,
+                "containerPort": 80
+                }
+            ],
+            "links": ["client", "server"]
+        }
+
+
+    ]
+
+}
