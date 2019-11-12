@@ -1,11 +1,4 @@
 {
-  "postgres_user" :  "postgres",
-  "postgres_password": "postgres_password",
-  "secgroupname" : "postgres_secgroup"
-}, 
- 
-
-{
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {

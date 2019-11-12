@@ -23,6 +23,23 @@ after_success:
    - docker push werton13/multi-server:v1
    - docker push werton13/multi-worker:v1
 
+# talk to AWS beanstalk to deploy our application
+
+deploy:
+   provider: elasticbeanstalk
+   region: "us-east-2"
+   app: "multi-docker"
+   env: "MultiDocker-env"
+# files for application in *.zip file a service name in AWSS3
+# (scalable storage elasticbeanstalk-RegionName-ID - can be viewed in S3 Storage )
+   bucket_name: "elasticbeanstalk-us-east-2-332194135470"
+   bucket_path: "docker-multi"
+   access_key_id: $AWS_ACCESS_KEY
+   secret_access_key: $AWS_SECRET_KEY
+on:
+   branch: master
+
+
 
 
 
