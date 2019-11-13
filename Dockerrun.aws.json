@@ -1,68 +1,34 @@
 {
-<<<<<<< HEAD
-  "postgres_user":  "postgres",
-  "postgres_password": "postgres_password",
-  "secgroupname": "postgres_secgroup"
-}, 
- 
-
-{
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
             "name": "client",
             "image": "werton13/multi-client:v1",
-=======
-    "AWSEBDockerrunVersion": 2,
-    "containerDefinitions": [
-        {
-            "name"  : "client",
-            "image" : "werton13/multi-client:v1",
->>>>>>> b5780d3d1fbcdfe5c7bc458854c815280860ed23
             "hostname": "client",
             "essential": false,
 	    "memory": 128
 
         },
         {
-<<<<<<< HEAD
             "name": "server",
             "image": "werton13/multi-server:v1",
-=======
-            "name" : "server",
-            "image" :" werton13/multi-server:v1",
->>>>>>> b5780d3d1fbcdfe5c7bc458854c815280860ed23
             "hostname": "api",
             "essential": false,
             "memory": 128
         },
         {
-<<<<<<< HEAD
             "name": "worker",
-            "image": " werton13/multi-worker:v1",
-=======
-            "name" : "worker",
-            "image" :" werton13/multi-worker:v1",
->>>>>>> b5780d3d1fbcdfe5c7bc458854c815280860ed23
+            "image": "werton13/multi-worker:v1",
             "hostname": "worker",
             "essential": false,
             "memory": 128
         },
         {
-<<<<<<< HEAD
             "name": "nginx",
             "image": " werton13/multi-nginx:v1",
             "hostname": "nginx",
             "essential": true,
             "portMappings": [
-=======
-            "name" : "nginx",
-            "image" :" werton13/multi-nginx:v1",
-            "hostname": "nginx",
-            "essential": true,
-            "memory": 128,
-            "portMappings" : [
->>>>>>> b5780d3d1fbcdfe5c7bc458854c815280860ed23
                 {
                 "hostPort": 80,
                 "containerPort": 80
