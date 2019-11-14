@@ -2,41 +2,41 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
-            "Name": "client1",
-            "Image": {
-                      "Name": "werton13/multi-client:latest"
+            "name": "client1",
+            "image": {
+                      "name": "werton13/multi-client:latest"
                      },
-            "Hostname": "client",
-            "Essential": false,
-	    "Memory": 128
+            "hostname": "client",
+            "essential": false,
+	    "memory": 128
 
         },
         {
-            "Name": "server1",
-            "Image": {
-                     "Name": "werton13/multi-server:latest"
+            "name": "server1",
+            "image": {
+                     "name": "werton13/multi-server:latest"
                      },
-            "Hostname": "api",
-            "Essential": false,
-            "Memory": 128
+            "nostname": "api",
+            "essential": false,
+            "memory": 128
         },
         {
-            "Name": "worker1",
-            "Image": {
-                      "Name": "werton13/multi-worker:latest"
+            "name": "worker1",
+            "image": {
+                      "name": "werton13/multi-worker:latest"
                      },
-            "Hostname": "worker",
-            "Essential": false,
-            "Memory": 128
+            "hostname": "worker",
+            "essential": false,
+            "memory": 128
         },
         {
-            "Name": "nginx1",
-            "Image": {
-                     "Name": " werton13/multi-nginx:latest"
+            "name": "nginx1",
+            "image": {
+                     "name": " werton13/multi-nginx:latest"
                      },
-            "Hostname": "nginx",
-            "Essential": true,
-            "PortMappings": [
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
                 {
                 "hostPort": 80,
                 "containerPort": 80
