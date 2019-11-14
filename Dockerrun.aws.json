@@ -2,7 +2,7 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
-            "Name": "client",
+            "Name": "client1",
             "Image": {
                       "Name": "werton13/multi-client:latest"
                      },
@@ -12,7 +12,7 @@
 
         },
         {
-            "Name": "server",
+            "Name": "server1",
             "Image": {
                      "Name": "werton13/multi-server:latest"
                      },
@@ -21,7 +21,7 @@
             "Memory": 128
         },
         {
-            "Name": "worker",
+            "Name": "worker1",
             "Image": {
                       "Name": "werton13/multi-worker:latest"
                      },
@@ -30,7 +30,7 @@
             "Memory": 128
         },
         {
-            "Name": "nginx",
+            "Name": "nginx1",
             "Image": {
                      "Name": " werton13/multi-nginx:latest"
                      },
@@ -42,7 +42,7 @@
                 "containerPort": 80
                 }
             ],
-            "Links": ["client", "server"]
+            "Links": ["client1", "server1"]
         }
 
 
