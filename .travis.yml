@@ -10,18 +10,18 @@ script:
 #   - docker run -e CI=true w13/react-test npm run test
    - docker run -e CI=true w13/react-test npm run test
 after_success:
-   - docker build -t werton13/multi-client:v1 ./client
-   - docker build -t werton13/multi-nginx:v1 ./nginx
-   - docker build -t werton13/multi-server:v1 ./server
-   - docker build -t werton13/multi-worker:v1 ./worker
+   - docker build -t werton13/multi-client:latest ./client
+   - docker build -t werton13/multi-nginx:latest ./nginx
+   - docker build -t werton13/multi-server:latest ./server
+   - docker build -t werton13/multi-worker:latest ./worker
 #login to the docker CLI
    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin docker.io
 
 # take those images and push them to the DockerHub!
-   - docker push werton13/multi-client:v1
-   - docker push werton13/multi-nginx:v1
-   - docker push werton13/multi-server:v1
-   - docker push werton13/multi-worker:v1
+   - docker push werton13/multi-client:latest
+   - docker push werton13/multi-nginx:latest
+   - docker push werton13/multi-server:latest
+   - docker push werton13/multi-worker:latest
 
 # talk to AWS beanstalk to deploy our application
 

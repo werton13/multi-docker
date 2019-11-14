@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "client",
-            "image": "werton13/multi-client:v1",
+            "image": "werton13/multi-client:latest",
             "hostname": "client",
             "essential": false,
 	    "memory": 128
@@ -11,21 +11,21 @@
         },
         {
             "name": "server",
-            "image": "werton13/multi-server:v1",
+            "image": "werton13/multi-server:latest",
             "hostname": "api",
             "essential": false,
             "memory": 128
         },
         {
             "name": "worker",
-            "image": "werton13/multi-worker:v1",
+            "image": "werton13/multi-worker:latest",
             "hostname": "worker",
             "essential": false,
             "memory": 128
         },
         {
             "name": "nginx",
-            "image": " werton13/multi-nginx:v1",
+            "image": " werton13/multi-nginx:latest",
             "hostname": "nginx",
             "essential": true,
             "portMappings": [
