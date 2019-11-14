@@ -28,6 +28,7 @@
             "image": "werton13/multi-nginx:latest",
             "hostname": "nginx",
             "essential": true,
+            "memory": 128,
             "portMappings": [
                 {
                 "hostPort": 80,
