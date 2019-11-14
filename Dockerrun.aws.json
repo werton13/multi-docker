@@ -3,7 +3,9 @@
     "containerDefinitions": [
         {
             "name": "client",
-            "image": "werton13/multi-client:latest",
+            "image": {
+                "name": "werton13/multi-client:latest"
+                     },
             "hostname": "client",
             "essential": false,
 	    "memory": 128
