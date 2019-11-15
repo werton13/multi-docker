@@ -2,7 +2,7 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
-            "name": "client1",
+            "name": "client",
             "image": "werton13/multi-client:latest",
             "hostname": "client",
             "essential": false,
@@ -10,21 +10,21 @@
 
         },
         {
-            "name": "server1",
+            "name": "server",
             "image": "werton13/multi-server:latest",
-            "nostname": "api",
+            "hostname": "api",
             "essential": false,
             "memory": 128
         },
         {
-            "name": "worker1",
+            "name": "worker",
             "image": "werton13/multi-worker:latest",
             "hostname": "worker",
             "essential": false,
             "memory": 128
         },
         {
-            "name": "nginx1",
+            "name": "nginx",
             "image": "werton13/multi-nginx:latest",
             "hostname": "nginx",
             "essential": true,
@@ -35,7 +35,7 @@
                 "containerPort": 80
                 }
             ],
-            "Links": ["client1", "server1"]
+            "Links": ["client", "server"]
         }
 
 
